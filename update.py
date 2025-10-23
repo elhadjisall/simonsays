@@ -17,7 +17,7 @@ from mistyPy.GenerateRobot import RobotGenerator
 # SET YOUR MISTY'S IP ADDRESS HERE
 # ============================================
 
-ROBOT_IP_ADDRESS = "192.168.1.100"  # Replace with your Misty's actual IP address
+ROBOT_IP_ADDRESS = "142.207.50.202"  # Replace with your Misty's actual IP address
 
 # ============================================
 

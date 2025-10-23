@@ -22,18 +22,34 @@ pip install git+https://github.com/MistyCommunity/Python-SDK.git
 pip install -r requirements.txt
 ```
 
-### 4. Set Your Misty's IP Address
-Open `misty_simon_says.py` and edit line 22:
-```python
-MISTY_IP_ADDRESS = "192.168.1.100"  # Replace with your Misty's IP
-```
+### 4. Configure Your Misty's IP Address
 
-To find your Misty's IP:
+**First, find your Misty's IP:**
 - Open the Misty App on your phone
 - Connect to your Misty
 - Note the IP address shown (e.g., 192.168.1.100)
 
-### 5. Run the Game!
+**Then set it in both files:**
+
+1. Open `update.py` and edit line 20:
+```python
+ROBOT_IP_ADDRESS = "YOUR_MISTY_IP"  # e.g., "192.168.1.100"
+```
+
+2. Open `misty_simon_says.py` and edit line 22:
+```python
+MISTY_IP_ADDRESS = "YOUR_MISTY_IP"  # Use the same IP as above
+```
+
+### 5. Update SDK (First Time Only)
+Run this once to update the SDK with your robot's API endpoints:
+```bash
+python update.py
+```
+
+You only need to do this the first time you set up the game.
+
+### 6. Run the Game!
 ```bash
 python misty_simon_says.py
 ```
