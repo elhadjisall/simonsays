@@ -2,6 +2,46 @@
 
 A classic Simon Says game for the Misty II robot! Misty will give you commands like "Simon says touch my head" or just "Touch my chin". You should only follow commands that start with "Simon says"!
 
+## Quick Start
+
+Want to play right now? Follow these steps:
+
+### 1. Clone the Repository
+```bash
+git clone git@github.com:elhadjisall/simonsays.git
+cd simonsays
+```
+
+### 2. Install Misty SDK
+```bash
+pip install git+https://github.com/MistyCommunity/Python-SDK.git
+```
+
+### 3. Install Game Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Set Your Misty's IP Address
+Open `misty_simon_says.py` and edit line 22:
+```python
+MISTY_IP_ADDRESS = "192.168.1.100"  # Replace with your Misty's IP
+```
+
+To find your Misty's IP:
+- Open the Misty App on your phone
+- Connect to your Misty
+- Note the IP address shown (e.g., 192.168.1.100)
+
+### 5. Run the Game!
+```bash
+python misty_simon_says.py
+```
+
+That's it! Misty will start explaining the rules and the game begins! 🎮
+
+---
+
 ## How It Works
 
 1. **Misty says "Let's play Simon Says!"** and explains the rules
@@ -165,5 +205,22 @@ The game follows these rules:
 4. **Win**: 5 successful commands
 5. **Lose**: Touch when "Simon says" wasn't used
 
+## License
 
+This project is open source and available for educational purposes.
+
+## Credits
+
+Built using the Misty II Robot and the [Misty Python SDK](https://github.com/MistyCommunity/Python-SDK).
+
+## Support
+
+For issues with:
+- **This game**: Check the troubleshooting section above
+- **Misty Python SDK**: Visit https://github.com/MistyCommunity/Python-SDK
+- **Misty Robot**: Visit https://docs.mistyrobotics.com/
+
+---
+
+**Happy Playing! 🤖🎮**
 
