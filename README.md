@@ -12,14 +12,14 @@ A classic Simon Says game for the Misty II robot! Misty will give you commands l
 
 ## Features
 
-- 👆 **Touch & Bump Sensors**: Uses Misty's capacitive touch and bump sensors
+- 👆 **Touch Sensors**: Uses Misty's capacitive touch sensors
 - 🤖 **Visual Feedback**: LED colors change based on game state
 - 🗣️ **Voice Commands**: Misty speaks all commands clearly
 - 🎯 **Classic Rules**: Only follow commands with "Simon says"
 - 🎉 **Win Celebration**: Special animation when you get 5 correct!
 - 🎭 **Expressive**: Misty shows emotions through her screen
 - ⏱️ **Timeout System**: 5 seconds to respond to each command
-- 🎲 **Random Commands**: Mix of touch and bump sensor commands
+- 🎲 **Random Commands**: Variety of touch sensor commands
 
 ## Prerequisites
 
@@ -125,18 +125,9 @@ This updates the SDK with your robot's available commands.
 | Chin      | Under the head | "Simon says touch my chin" |
 | Scruff    | Back of neck | "Touch my scruff" |
 
-### Bump Sensors
-| Sensor ID | Location | Command Example |
-|-----------|----------|-----------------|
-| bfr | Front right bumper | "Simon says touch my front right bumper" |
-| bfl | Front left bumper | "Touch my front left bumper" |
-| brr | Back right bumper | "Simon says touch my back right bumper" |
-| brl | Back left bumper | "Touch my back left bumper" |
-
 ## Game Controls
 
 - **Touch Sensors**: Use your finger to touch Misty's capacitive sensors
-- **Bump Sensors**: Press the physical bump sensors on her base
 - **Quit Game**: Press `Ctrl+C` at any time
 
 ## LED Color Guide
@@ -160,7 +151,6 @@ This updates the SDK with your robot's available commands.
 ### Sensor Detection Issues
 - Make sure you're touching the correct sensor that Misty mentions
 - Touch sensors require skin contact (capacitive)
-- Bump sensors require a firm press
 - Wait for the cyan LED (Misty is ready for input)
 
 ### Import Errors
@@ -173,25 +163,6 @@ This updates the SDK with your robot's available commands.
 - Try restarting Misty
 - Verify the IP address is correct
 
-## Customization Ideas
-
-### Easy Modifications:
-1. **Change win condition**: Modify the `5` in line 210 to require more/fewer successes
-2. **Adjust response time**: Change `command_timeout` (line 26) for more/less time
-3. **Change difficulty**: Modify the probability on line 216 (currently 70% chance of "Simon says")
-4. **Add more sensors**: Extend the sensor dictionaries with additional sensors
-
-### Advanced Features:
-1. **Difficulty levels**: 
-   - Easy: 90% "Simon says" commands
-   - Medium: 70% "Simon says" commands (current)
-   - Hard: 50% "Simon says" commands
-2. **Time pressure mode**: Reduce timeout as game progresses
-3. **High score system**: Track longest winning streaks
-4. **Multiplayer mode**: Players take turns
-5. **Sound effects**: Add fun sounds for correct/wrong responses
-6. **Combo system**: Bonus points for consecutive correct responses
-
 ## Code Structure
 
 ```
@@ -199,7 +170,6 @@ MistySimonSays
 ├── __init__()            # Initialize game settings and sensor mappings
 ├── setup_game()          # Prepare Misty and explain rules
 ├── touched_callback()    # Handle touch sensor events
-├── bumped_callback()     # Handle bump sensor events  
 ├── give_command()        # Generate and speak a command
 ├── wait_for_response()   # Wait for player to touch (or not)
 ├── check_response()      # Verify if player was correct
@@ -227,19 +197,6 @@ The game follows these rules:
 
 4. **Win**: 5 successful commands
 5. **Lose**: Touch when "Simon says" wasn't used
-
-## Future Enhancements
-
-- [ ] Add difficulty selection (Easy/Medium/Hard)
-- [ ] Implement high score tracking system
-- [ ] Add sound effects for correct/wrong responses
-- [ ] Create leaderboard for multiple players
-- [ ] Speed mode (faster timeout as you progress)
-- [ ] Add more sensor combinations
-- [ ] Display score on Misty's screen
-- [ ] Add "practice mode" with no elimination
-- [ ] Combo multiplier for consecutive successes
-- [ ] Add voice recognition for "I give up" to quit gracefully
 
 ## License
 
