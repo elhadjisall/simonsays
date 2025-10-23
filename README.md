@@ -25,65 +25,36 @@ A classic Simon Says game for the Misty II robot! Misty will give you commands l
 
 1. **Misty II Robot** - Connected to your WiFi network
 2. **Python 3.8+** installed on your computer
-3. **Misty Python SDK** - Download from [MistyCommunity/Python-SDK](https://github.com/MistyCommunity/Python-SDK)
+3. **pip** (Python package manager) - Usually comes with Python
 
 ## Setup Instructions
 
-### Step 1: Download Misty Python SDK
+### Step 1: Install Misty Python SDK
 
-1. Download the Misty Python SDK from: https://github.com/MistyCommunity/Python-SDK
-2. Extract the ZIP file to a folder (e.g., `C:\Users\YourName\Desktop\MistySDK`)
-
-### Step 2: Place Your Project
-
-Copy the `misty-simon-says` folder into the same directory as the Misty SDK so your structure looks like:
-
-```
-MistySDK/
-├── mistyPy/
-│   ├── __init__.py
-│   ├── Robot.py
-│   ├── Events.py
-│   ├── EventFilters.py
-│   └── GenerateRobot.py
-└── misty-simon-says/
-    ├── misty_simon_says.py
-    ├── requirements.txt
-    └── README.md
-```
-
-### Step 3: Install Dependencies
-
-Open a terminal/command prompt in the SDK directory and run:
+Install the Misty Python SDK directly from GitHub:
 
 ```bash
-pip install -r misty-simon-says/requirements.txt
+pip install git+https://github.com/MistyCommunity/Python-SDK.git
 ```
 
-Or install individually:
+Or if you've already downloaded it locally:
 ```bash
-pip install requests>=2.25.1
-pip install websocket-client<=0.57.0
-pip install yapf>=0.30.0
+cd Python-SDK
+pip install -e .
 ```
 
-### Step 4: Update Robot Commands (First Time Only)
+### Step 2: Install Game Dependencies
 
-Create a file called `update.py` in the SDK directory with:
-
-```python
-from mistyPy.GenerateRobot import RobotGenerator
-RobotGenerator("YOUR_MISTY_IP_ADDRESS")
-```
-
-Run it once:
 ```bash
-python update.py
+pip install -r requirements.txt
 ```
 
-This updates the SDK with your robot's available commands.
+This installs:
+- requests>=2.25.1
+- websocket-client<=0.57.0
+- yapf>=0.30.0
 
-### Step 5: Find Your Misty's IP Address
+### Step 3: Find Your Misty's IP Address
 
 1. Open the **Misty App** on your phone
 2. Connect to your Misty
@@ -92,16 +63,12 @@ This updates the SDK with your robot's available commands.
 ## Running the Game
 
 1. Make sure Misty is powered on and connected to WiFi
-2. Navigate to the misty-simon-says directory:
-   ```bash
-   cd misty-simon-says
-   ```
-3. Run the game:
+2. Run the game:
    ```bash
    python misty_simon_says.py
    ```
-4. Enter Misty's IP address when prompted
-5. Follow the on-screen instructions!
+3. Enter Misty's IP address when prompted (or set it in the code on line 22)
+4. Follow the on-screen instructions and have fun!
 
 ## How to Play
 
@@ -154,9 +121,9 @@ This updates the SDK with your robot's available commands.
 - Wait for the cyan LED (Misty is ready for input)
 
 ### Import Errors
-- Make sure the `mistyPy` folder is in the parent directory
+- Make sure the Misty SDK is installed: `pip install git+https://github.com/MistyCommunity/Python-SDK.git`
 - Verify all dependencies are installed: `pip install -r requirements.txt`
-- Check that you've run the `update.py` script at least once
+- Try reinstalling: `pip uninstall Misty-SDK` then reinstall
 
 ### Robot Not Responding
 - Check network connection
