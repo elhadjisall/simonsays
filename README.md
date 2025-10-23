@@ -165,22 +165,5 @@ The game follows these rules:
 4. **Win**: 5 successful commands
 5. **Lose**: Touch when "Simon says" wasn't used
 
-## License
 
-This project is open source and available for educational purposes.
-
-## Credits
-
-Built using the Misty II Robot and the [Misty Python SDK](https://github.com/MistyCommunity/Python-SDK).
-
-## Support
-
-For issues with:
-- **This game**: Check the troubleshooting section above
-- **Misty Python SDK**: Visit https://github.com/MistyCommunity/Python-SDK
-- **Misty Robot**: Visit https://docs.mistyrobotics.com/
-
----
-
-**Happy Playing! 🤖🎮**
 
